@@ -1,0 +1,89 @@
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+
+* {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+body {
+  overflow: hidden;
+}
+
+.material-icons {
+  font-size: 16px;
+  font-weight: 900;
+  text-align: center;
+}
+
+header {
+  display: block;
+
+  a {
+    display: flex;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 30px;
+    background-color: lightseagreen;
+  }
+
+  #control {
+
+    .undo,
+    .redo,
+    .cached {
+      background-color: lighten($color: lightseagreen, $amount: 7);
+      padding: 5px;
+      border-radius: 20%;
+      margin: 10px;
+    }
+  }
+}
+
+#control,
+#scores {
+  display: flex;
+  justify-content: center;
+}
+
+#scores {
+  span {
+    padding: 5px 10px;
+    font-weight: 700;
+  }
+}
+
+main {
+  display: flex;
+  justify-content: center;
+
+  #board {
+    width: 500px;
+    height: 500px;
+    border: 3px solid lightseagreen;
+    background-color: lighten($color: lightseagreen, $amount: 33);
+
+    .row {
+      display: flex;
+      justify-content: space-around;
+      height: 24.2%;
+      width: 100%;
+      border: 2px solid lightseagreen;
+
+      .column {
+        width: 200px;
+        height: 100%;
+        border: 2px solid lightseagreen;
+      }
+
+      .cell {
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        font-size: 90px;
+        background-color: #0093AF;
+
+      }
+    }
+
+  }
+}
