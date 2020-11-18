@@ -31,40 +31,40 @@ function reverseArr(pos, arr) {
   x.map((e, k) => {
     while (pos == 'right' && e.some((h, g) => h !== '' && e[g + 1] == '')) { //check if position is right and if there is numbers that has empty string after it
       let ind = e.findIndex((a, b) => a !== '' && e[b + 1] == '');
-      e.splice(ind + 1, 1)
-      e.unshift('')
-      move = true
+      e.splice(ind + 1, 1);
+      e.unshift('');
+      move = true;
     }
     while (pos == 'left' && e.some((h, g) => h !== '' && e[g - 1] == '')) {
       let ind = e.findIndex((a, b) => a !== '' && e[b - 1] == '');
-      e.splice(ind - 1, 1)
-      e.push('')
-      move = true
+      e.splice(ind - 1, 1);
+      e.push('');
+      move = true;
     }
     if (pos == 'up' || pos == 'down') {
       move = false;
-      e.map((n, t) => {
+      e.forEach((n, t) => {
         let index = e.findIndex((a, b) => pos == 'up' ? x[b + 1] && x[b + 1][k] !== ''
-          && x[b][k] == '' : x[b - 1] && x[b - 1][k] !== '' && x[b][k] == '')
+          && x[b][k] == '' : x[b - 1] && x[b - 1][k] !== '' && x[b][k] == '');
         if (index > -1) {
           move = true;
           if (pos == 'up') {
             x[index][k] = x[index + 1][k];
-            x[index + 1][k] = ''
+            x[index + 1][k] = '';
           }
           if (pos == 'down') {
             x[index][k] = x[index - 1][k];
-            x[index - 1][k] = ''
+            x[index - 1][k] = '';
           }
         }
-        
-      })
+
+      });
       console.log(move);
-  
+
     }
     return e;
-  })
-  move == true ? randomTwoes(matrix, 2) : null
+  });
+  if (move) randomTwoes(matrix, 2);
   return x;
 }
 
@@ -84,7 +84,7 @@ function sum(arr, pos) {
     })
     let horizontal = [...v]
     if (pos == 'up' || pos == 'down') {
-      v.map((y, i) => {
+      v.forEach((y, i) => {
         if (y !== '' && y == v[i + 1] && pos == 'up') {
           horizontal.splice(i, 2, 2 * y);
           horizontal.push('')
