@@ -10,11 +10,17 @@
 </head>
 
 <body>
+  <div id="modal">
+    <h1 id="modal_txt"></h1>
+    <button id="restart">Restart <span class="material-icons">
+      cached
+    </span></button>
+  </div>
   <header>
     <a>2048</a>
     <div id="scores">
       <span id="Best_score">Best Score: 0</span>
-      <span id="Current_score">Current Score: 0</span>
+      <span>Current Score:<span id="Current_score"></span> </span>
     </div>
     <div id="control">
       <span class="material-icons cached">cached</span>
@@ -50,6 +56,8 @@
       </div>
     </div>
   </main>
+  </div>
   <script src="script.js"></script>
 </body>
+
 </html>
